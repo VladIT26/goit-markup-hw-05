@@ -193,7 +193,6 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-
 /* секція 2 */
 .features {
   display: flex;
@@ -240,8 +239,27 @@ body {
 .work-list {
   display: flex;
 }
+.work-list-img {
+  position: relative;
+}
 .work-list-img:not(:last-child) {
   margin-right: 30px;
+}
+.work-list-item {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
 }
 /* секція 4 */
 .section-team {
@@ -416,9 +434,17 @@ body {
   border-bottom: 1px solid rgba(238, 238, 238, 1);
   border-right: 1px solid rgba(238, 238, 238, 1);
 }
+
 .projects-link {
   display: block;
   text-decoration: none;
+}
+.projects-img {
+  position: relative;
+}
+
+.projects-img:hover {
+  background: rgba(33, 150, 243, 0.9);
 }
 
 .projects-link:hover,
@@ -434,11 +460,16 @@ body {
   color: var(--primary-text-color);
   margin-bottom: 4px;
 }
-.project-item {
+.projects-item {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: #757575;
+}
+.projects-description {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
 }
 
 /* футер */
@@ -558,4 +589,49 @@ body {
   background-color: rgba(33, 150, 243, 1);
   color: rgba(255, 255, 255, 1);
   border-radius: 50%;
+}
+
+/* Модалка */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  visibility: visible;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+.modal-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
